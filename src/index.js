@@ -2,12 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+
+// importing milligram for some default styling
+import "milligram";
+// import the BrowserRouter component and rename it router
+import {BrowserRouter as Router, Route} from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  // Wrap our app component inside router so App and children can use router
+  // Pass the app component into Route to give it access to router props
+  <Router>
+    <React.StrictMode>
+     <Route component={App} />
+    </React.StrictMode>
+  </Router>,
   document.getElementById('root')
 );
 
